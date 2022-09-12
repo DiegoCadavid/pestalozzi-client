@@ -1,0 +1,12 @@
+.app {
+    min-height: 100vh;
+    margin: auto;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+.noscroll {
+    overflow: hidden;
+}

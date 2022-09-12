@@ -1,0 +1,77 @@
+/* Dark theme */
+:root {
+  --primary-muted: #d05353 ;
+  --primary: #ff4a4a;
+  --primary-2: #ff6e65 ; 
+  --primary-dark: #802626;
+
+  --secundary: #A9A;
+
+  --bg-primary:#161c2d;
+  --bg-light: #121725 ;
+  --bg-secondary: #060e1f;
+
+  /* Dark > color white */
+  --dark: #333;
+  --muted-dark: #939393;
+  
+  /* Light > color dark */
+  --light: #f4f4f4;
+  --light-muted: #e0cccc;
+  
+}
+
+/* Light Theme */
+/* :root {
+  --primary-muted: #CC0000 ;
+  --primary: #FF0000;
+  --primary-dark: #802626;
+
+  --secundary: #A9A;
+
+  --bg-primary:#161c2d;
+  --bg-light: #121725 ;
+  --bg-secondary: #060e1f;
+
+  --dark: #333;
+  --light: #f4f4f4;
+  --muted: #ebebeb;
+  --muted-dark: #939393;
+} */
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ICONS */
+.material-symbols-outlined {
+  user-select: none;
+  
+font-variation-settings:
+'FILL' 0,
+'wght' 300,
+'GRAD' 0,
+'opsz' 30
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in;
+}
+
