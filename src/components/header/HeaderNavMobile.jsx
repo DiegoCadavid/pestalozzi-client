@@ -11,7 +11,6 @@ const HeaderNavMobile = ({ closedMenu }) => {
           <button>  <span className="material-symbols-outlined">mail</span> </button>
           <button> <span className="material-symbols-outlined">location_on</span> </button>
           <button> <span className="material-symbols-outlined">call</span> </button>
-          <button> <span className="material-symbols-outlined">dark_mode</span> </button>
         </div>
         <div>
           <button onClick={closedMenu} className='header__nav_mobile_closed_button'>

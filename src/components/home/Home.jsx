@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Carousel from "./carousel/Carousel";
 
 import "./home.css";
+import NewsHome from "./news/NewsHome";
 import OurInstitution from "./ourInstitution/OurInstitution";
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
     <div>
       <Carousel />
       <OurInstitution />
+      <NewsHome />
     </div>
   );
 };

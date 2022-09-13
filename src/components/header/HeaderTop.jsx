@@ -14,7 +14,6 @@ const HeaderTop = ({ showMobileMenu }) => {
         <span className="material-symbols-outlined">mail</span>
         <span className="material-symbols-outlined">location_on</span>
         <span className="material-symbols-outlined">call</span>
-        <span className="material-symbols-outlined">dark_mode</span>
       </div>
 
       <button className="header__nav_button" onClick={showMobileMenu}>

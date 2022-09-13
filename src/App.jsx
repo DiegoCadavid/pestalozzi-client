@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./app.css";
 
+import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import ScrollToTop from "./components/ScrollToTop";
+import NoFound from "./components/404/NoFound";
 
 function App() {
   // Verificamos si estamos en celular
@@ -25,6 +26,7 @@ function App() {
       <Header mobileDevice={mobileDevice} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NoFound />} />
       </Routes>
     </div>
   );
