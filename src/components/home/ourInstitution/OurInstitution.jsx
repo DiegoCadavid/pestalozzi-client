@@ -6,7 +6,7 @@ const OurInstitution = () => {
   return (
     <div className="our">
       <div className="our__title">
-        <span class="material-symbols-outlined">import_contacts</span>
+        <span className="material-symbols-outlined">import_contacts</span>
         <h4> Colegio Pestalozzi </h4>
         <h3> Nuestra institucion </h3>
       </div>

@@ -11,12 +11,22 @@ function App() {
   // Verificamos si estamos en celular
   const [mobileDevice, setMobileDevice] = useState(false);
 
+
+  // ARREGLAR EL BUG DE QUE DETECTA LOS DISPOSITIVOS MOBILES
   useEffect(() => {
-    setMobileDevice(window.innerWidth <= 600 ? true : false);
+    if( window.innerWidth <= 600 ) {
+      setMobileDevice(true);
+    }else {
+      setMobileDevice(false)
+    }
 
     // Cada que se cambia el tamaño de la pagina se verifica el dispositvo
     window.addEventListener("resize", () => {
-      setMobileDevice(window.innerWidth <= 600 ? true : false);
+      if(  window.innerWidth <= 600 ) {
+        setMobileDevice(true);
+      }else {
+        setMobileDevice(false)
+      }
     });
   }, []);
 
