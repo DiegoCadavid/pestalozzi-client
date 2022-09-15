@@ -6,26 +6,28 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import NoFound from "./components/404/NoFound";
+import Footer from "./components/footer/Footer";
 
 function App() {
   // Verificamos si estamos en celular
   const [mobileDevice, setMobileDevice] = useState(false);
 
-
   // ARREGLAR EL BUG DE QUE DETECTA LOS DISPOSITIVOS MOBILES
   useEffect(() => {
-    if( window.innerWidth <= 600 ) {
+    if (window.innerWidth <= 750) {
+      console.log(`Mobile:  ${window.innerWidth}px`);
       setMobileDevice(true);
-    }else {
-      setMobileDevice(false)
+    } else {
+      console.log(`Windows:  ${window.innerWidth}px`);
+      setMobileDevice(false);
     }
 
     // Cada que se cambia el tamaño de la pagina se verifica el dispositvo
     window.addEventListener("resize", () => {
-      if(  window.innerWidth <= 600 ) {
+      if (window.innerWidth <= 750) {
         setMobileDevice(true);
-      }else {
-        setMobileDevice(false)
+      } else {
+        setMobileDevice(false);
       }
     });
   }, []);
@@ -38,6 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NoFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

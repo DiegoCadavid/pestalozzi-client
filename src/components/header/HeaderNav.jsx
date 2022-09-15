@@ -22,9 +22,9 @@ const HeaderNav = () => {
         <ul>
           <HeaderNavLink to="" name="inicio" />
           <HeaderNavLink to="about" name="Quienes somos" />
-          <HeaderNavLink to="location" name="Ubicacion" />
           <HeaderNavLink to="contact" name="Contacto" />
           <HeaderNavLink to="galery" name="Galeria" />
+          <HeaderNavLink to="news" name="Noticias" />
           <li
             onClick={handleToggle}
             className="header__nav_item_more"

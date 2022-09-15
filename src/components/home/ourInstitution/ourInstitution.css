@@ -104,4 +104,22 @@
         gap: 15px;
     }
 
+    .our__info_item {
+        height: 120px;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .our__info_item p {
+        margin: 12px 8px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .our__info_item span {
+        margin-bottom: 0;
+        font-size: 30px;
+        margin: 10px;
+    }
+
 }

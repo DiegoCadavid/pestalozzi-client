@@ -8,12 +8,21 @@ const HeaderNavMobile = ({ closedMenu }) => {
     <div className="header__nav_mobile fadeIn">
       <div className="header__nav_mobile_icons_container">
         <div>
-          <button>  <span className="material-symbols-outlined">mail</span> </button>
-          <button> <span className="material-symbols-outlined">location_on</span> </button>
-          <button> <span className="material-symbols-outlined">call</span> </button>
+          <button>
+            <span className="material-symbols-outlined">mail</span>
+          </button>
+          <button>
+            <span className="material-symbols-outlined">location_on</span>
+          </button>
+          <button>
+            <span className="material-symbols-outlined">call</span> 
+          </button>
         </div>
         <div>
-          <button onClick={closedMenu} className='header__nav_mobile_closed_button'>
+          <button
+            onClick={closedMenu}
+            className="header__nav_mobile_closed_button"
+          >
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>
@@ -21,10 +30,14 @@ const HeaderNavMobile = ({ closedMenu }) => {
 
       <ul className="header__nav_mobile_menu">
         <HeaderNavLink closedMenu={closedMenu} to="" name="inicio" />
-        <HeaderNavLink closedMenu={closedMenu} to="about" name="Quienes somos" />
-        <HeaderNavLink closedMenu={closedMenu} to="location" name="Ubicacion" />
+        <HeaderNavLink
+          closedMenu={closedMenu}
+          to="about"
+          name="Quienes somos"
+        />
         <HeaderNavLink closedMenu={closedMenu} to="contact" name="Contacto" />
         <HeaderNavLink closedMenu={closedMenu} to="galery" name="Galeria" />
+        <HeaderNavLink closedMenu={closedMenu} to="news" name="Noticias" />
 
         {/* Mas */}
         <HeaderNavLink closedMenu={closedMenu} to="works" name="Tareas" />

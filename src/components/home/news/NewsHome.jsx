@@ -2,7 +2,7 @@ import React from "react";
 import "./newsHome.css";
 import NewsHomeItem from "./NewsHomeItem";
 
-const NewsHome = () => {
+const NewsHome = () => {  
   return (
     <div className="news_home">
       <div className="news_home__title">
@@ -10,6 +10,7 @@ const NewsHome = () => {
         <span>  </span>
       </div>
       <div className="news_home__container">
+        <NewsHomeItem />
         <NewsHomeItem />
         <NewsHomeItem />
         <NewsHomeItem />
