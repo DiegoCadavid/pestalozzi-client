@@ -98,7 +98,7 @@ const Footer = () => {
       {/* Informacion legal */}
       <div className="footer__row footer__legal">
         <p>
-          Copyright © Colegio Pestalozzi 2021 - Todos los derechos reservados
+          Copyright © Colegio Pestalozzi 2022 - Todos los derechos reservados
         </p>
       </div>
       <div className="footer__row  footer__about">
