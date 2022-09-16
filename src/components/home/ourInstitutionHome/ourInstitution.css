@@ -32,7 +32,7 @@
     color: var(--primary);
     text-transform: capitalize;
     text-align: center;
-    font-size: 40px;
+    font-size: var(--home-title-xl);
     font-weight: 600;
 }
 
@@ -56,6 +56,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    transition: all .3s ease;
+}
+
+.our__info_item:hover, .our__info_item:active {
+    box-shadow: 0px 13px 0px 0px var(--bg-secondary);
+    transform: translateY(-13px);
+    cursor: pointer;
 }
 
 .our__info_item span {
@@ -94,7 +102,7 @@
     }
 
     .our__title h3 {
-        font-size: 24px;
+        font-size: var(--home-title-xl-mobile);
         font-weight: 500;
     }
 
@@ -108,6 +116,7 @@
         height: 120px;
         flex-direction: row;
         padding: 0;
+        margin-bottom: 10px;
     }
 
     .our__info_item p {

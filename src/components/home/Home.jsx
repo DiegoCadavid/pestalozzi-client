@@ -1,30 +1,21 @@
 import React, { useEffect } from "react";
+
 import Carousel from "./carousel/Carousel";
-import GaleryHome from "./galery/GaleryHome";
+import NewsHome from "./newsHome/NewsHome";
+import GaleryHome from "./galeryHome/GaleryHome";
+import OurInstitution from "./ourInstitutionHome/OurInstitution";
 
 import "./home.css";
-import NewsHome from "./news/NewsHome";
-import OurInstitution from "./ourInstitution/OurInstitution";
+import ContactHome from "./contactHome/ContactHome";
 
 const Home = () => {
-  // Verificamos si la pagina tiene un hash
-  useEffect(() => {
-    return () => {
-      const hash = window.location.hash;
-
-      if (hash) {
-        const section = document.querySelector(hash);
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  }, []);
-
   return (
     <div>
       <Carousel />
       <OurInstitution />
       <NewsHome />
       <GaleryHome />
+      <ContactHome />
     </div>
   );
 };

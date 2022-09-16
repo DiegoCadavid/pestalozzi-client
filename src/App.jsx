@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import "./app.css";
 
 import ScrollToTop from "./components/ScrollToTop";
+import NoFound from "./components/noFound/NoFound";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
-import NoFound from "./components/404/NoFound";
 import Footer from "./components/footer/Footer";
 
 function App() {

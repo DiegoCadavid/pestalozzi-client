@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./newsHome.css";
 import NewsHomeItem from "./NewsHomeItem";
 
-const NewsHome = () => {  
+const NewsHome = () => {
   return (
     <div className="news_home">
       <div className="news_home__title">
         <h3> Noticias </h3>
-        <span>  </span>
       </div>
       <div className="news_home__container">
         <NewsHomeItem />
@@ -15,6 +15,7 @@ const NewsHome = () => {
         <NewsHomeItem />
         <NewsHomeItem />
       </div>
+      <Link to="news"> Ver mas </Link>
     </div>
   );
 };

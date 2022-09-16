@@ -6,7 +6,6 @@ const HeaderNavDropdown = ({ handleClose }) => {
   const dropdownRef = useRef(null);
 
   const handleLeave = () => {
-    console.log("Mouse salio");
     handleClose();
   };
 

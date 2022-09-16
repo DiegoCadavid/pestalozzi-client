@@ -1,43 +1,22 @@
 /* Dark theme */
 :root {
-  --primary-muted: #d05353 ;
-  --primary: #fb0000;
+  --primary-muted: #b63c3c ;
+  --primary: #ce4040;
   --primary-2: #ff6e65 ; 
-  --primary-dark: #802626;
-
-  --secundary: #A9A;
+  --primary-dark: #791717;
 
   --bg-primary:#161c2d;
   --bg-light: #121725 ;
   --bg-secondary: #060e1f;
+  --bg-light-muted: #080b15;
 
-  /* Dark > color white */
   --dark: #333;
   --muted-dark: #939393;
   
-  /* Light > color dark */
   --light: #f4f4f4;
   --light-muted: #e0cccc;
   
 }
-
-/* Light Theme */
-/* :root {
-  --primary-muted: #CC0000 ;
-  --primary: #FF0000;
-  --primary-dark: #802626;
-
-  --secundary: #A9A;
-
-  --bg-primary:#161c2d;
-  --bg-light: #121725 ;
-  --bg-secondary: #060e1f;
-
-  --dark: #333;
-  --light: #f4f4f4;
-  --muted: #ebebeb;
-  --muted-dark: #939393;
-} */
 
 
 * {

@@ -1,3 +1,216 @@
 .footer {
-    background-color: red;
+    padding: 30px 50px;
+    background-color: var(--bg-light-muted);
+    font-size: 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+
+.footer__row_border {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--bg-primary)
+}
+
+/* General */
+.footer__column h6 {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* Titulo */
+.footer__row >  h3 {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Informacion de contacto */
+.footer__contact ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.footer__contact li {
+    margin-top: 8px;
+    color: var(--light-muted);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.footer__contact li span {
+    font-size: 14px;
+}
+
+
+/* Red social */
+.footer__social ul {
+    margin-top: 12px;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__social li {
+    text-align: right;
+
+    /* icono  */
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.footer__social li[facebook] {
+    background-image: url(../../assets/facebookIcon.png);
+}
+
+.footer__social li[instagram] {
+    background-image: url(../../assets/instagramIcon.png);
+}
+
+.footer__social li a {
+    text-decoration: none;
+    color: var(--light-muted);
+}
+
+.footer__social li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/* Afiliados */
+.footer__affiliates > div {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.footer__affiliates > div img {
+    height: 80px;
+    background-color: var(--light-muted);
+    opacity: .5;
+    padding: 10px;
+    border-radius: 8px;
+
+    transition: all .3s ease;
+}
+
+
+.footer__affiliates > div img:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* Links de interes */
+.footer__links {
+    flex-direction: column;
+}
+
+.footer__links ul{
+    margin-top: 12px;
+    list-style: none;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+}
+
+.footer__links li a {
+    color: var(--light-muted);
+    text-decoration: none;
+}
+
+.footer__links li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Informacion legal  */
+.footer__legal {
+    margin-top: 20px;
+    color: var(--light-muted);
+    text-align: center;
+    font-weight: 300;
+    
+    justify-content: center;
+}
+
+/* Acerca de  */
+.footer__about {
+    justify-content: center;
+    color: var(--light-muted);
+    font-weight: 300;
+}
+
+.footer__about a {
+    color: var(--primary-muted);
+    cursor: pointer;
+}
+
+.footer__about  br {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+
+    .footer {
+        gap: 20px;
+    }
+    .footer__row {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    /* Titulo */
+    .footer__row > h3 {
+        text-align: center;
+    }
+
+    /* Red social */
+    .footer__social li {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    /* Afiliados */
+    .footer__affiliates > div img {
+        height: 60px;
+    }
+
+    /* Links de interes */
+    .footer__links ul {
+        text-align: left;
+    }
+
+    /* Acerca de  */
+    .footer__about p {
+        text-align: center;
+    }
+    
+    .footer__about br {
+        display: block;
+    }
+
+
 }
