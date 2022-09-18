@@ -1,0 +1,155 @@
+.galery > p {
+    color: var(--light);
+    padding: 10px;
+    background-color: var(--bg-light);
+    border-left: 8px solid var(--primary);
+    
+}
+
+.galery__container {
+
+    margin-top: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.galery__item {
+    position: relative;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    width: 200px;
+    height: 200px;
+
+    transition: all .3s ease;
+}
+
+.galery__item:hover {
+    transform: scale(1.05);
+}
+
+
+.galery__item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.galery__item_info {
+    position: absolute;
+    /* Hover effect */
+    opacity: 0;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    transition: all .3s ease;
+}
+
+.galery__item_info:hover {
+    opacity: 1;
+}
+
+.galery__item_info button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+
+    transition: all .3 ease;
+}
+
+.galery__item_info button span {
+    font-size: 30px;
+    background-color: var(--light);
+    padding: 10px;
+    border-radius: 50%;
+    opacity: .8;
+}
+
+.galery__item_info button:hover {
+    cursor: pointer;
+}
+
+.galery__item_info button:active {
+    transform: scale(1.2);
+}
+
+/* Fullscreen modal */
+.galery__fullscreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    background-color: rgba(25, 25, 25, 0.793);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.galery__fullscreen_image {
+    background-color: var(--bg-light);
+    width: 80%;
+    height: 70%;
+    border-radius: 12px;    
+}
+
+.galery__fullscreen_image img {
+    width: 100%;
+    height: 100%;
+
+    object-position: center;
+    object-fit: contain;
+
+    color: var(--light);
+}
+
+.galery__fullscreen_exit {
+    margin-top: 24px;
+    padding: 10px;
+    border: 0;
+    border-radius: 50% ;
+    background-color: var(--primary-muted);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .3s ease;
+}
+
+.galery__fullscreen_exit span {
+    font-size: 40px;
+    color: var(--light);
+}
+
+.galery__fullscreen_exit:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 750px) {
+    .galery {
+        padding: 10px;
+    }
+
+    .galery__item {
+        width: 110px;
+        height: 110px;
+    }
+}

@@ -1,21 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/Logo.png";
+import { useNavigate } from "react-router-dom";
+import AdminNav from "../admin/adminNav/AdminNav";
 import HeaderNavLink from "./HeaderNavLink";
 
-const HeaderNavMobile = ({ closedMenu }) => {
+const HeaderNavMobile = ({ closedMenu, auth  }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("contact");
+    closedMenu();
+  };
+
   return (
-    <div className="header__nav_mobile fadeIn">
+    <div className="header__nav_mobile fadeIn" translate="no">
       <div className="header__nav_mobile_icons_container">
         <div>
-          <button>
+          <button onClick={handleClick}>
             <span className="material-symbols-outlined">mail</span>
           </button>
-          <button>
+          <button onClick={handleClick}>
             <span className="material-symbols-outlined">location_on</span>
           </button>
-          <button>
-            <span className="material-symbols-outlined">call</span> 
+          <button onClick={handleClick}>
+            <span className="material-symbols-outlined">call</span>
           </button>
         </div>
         <div>
@@ -40,17 +47,27 @@ const HeaderNavMobile = ({ closedMenu }) => {
         <HeaderNavLink closedMenu={closedMenu} to="news" name="Noticias" />
 
         {/* Mas */}
-        <HeaderNavLink closedMenu={closedMenu} to="works" name="Tareas" />
         <HeaderNavLink
           closedMenu={closedMenu}
           to="virtual-classroom"
           name="Aula virtual"
         />
+        
         <HeaderNavLink
           closedMenu={closedMenu}
-          to="parents-association"
-          name="Asociacion de padres"
+          to="academic"
+          name="Gestion academica"
         />
+
+        {!auth && <HeaderNavLink
+          closedMenu={closedMenu}
+          to="login"
+          name="iniciar sesion"
+        />}
+
+        {
+          auth && <AdminNav closedMenu={closedMenu}/>
+        }
       </ul>
     </div>
   );

@@ -1,0 +1,155 @@
+.contact__map {
+    width: 90%;
+    height: 490px;
+    border-radius: 12px;
+
+    background-color: var(--bg-light);
+}
+
+.contact__map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.contact__info {
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 12px;
+
+    color: var(--light);
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact__info_item {
+    width: 400px;
+    height: 120px;
+        
+    background-color: var(--bg-light);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.contact__info_item p {
+    text-align: center;
+    color: var(--light-muted);
+}
+
+.contact__info_item span {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+
+/* EMAILS PROFESORES */
+.contact__email {
+    margin-top: 24px;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__email h4 {
+    color: var(--primary);
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.contact__email_container {
+    padding-top: 12px;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 8px;
+}
+
+.contact__email_item {
+    padding: 10px 20px;
+
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    color: var(--light-muted);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.contact__email_item > div {
+    display: flex;
+    align-items: center;
+}
+
+.contact__email_item > div:first-child {
+    color: var(--primary-muted);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.contact__email_item span {
+    padding: 8px;
+    color: var(--primary-muted);
+}
+
+@media only screen and (max-width: 750px) {
+    .contact {
+        margin: 24px 0px;;
+        min-height: calc(100vh - 82px);   
+    }
+
+    .contact__map {
+        width: 100%;
+        height: 290px;
+    }
+
+    .contact__info {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact__info_item {
+        width: 100%;
+        padding: 25px;
+
+        font-size: 16px;
+    }
+
+    .contact__info_item span {
+        font-size: 30px;
+    }
+
+    /* Email */
+
+    .contact__email {
+        width: 100%;
+    }
+
+    .contact__email_item {
+        flex-direction: column;
+    }
+
+    .contact__email_item > div {
+        margin-bottom: 10px;
+    }
+
+    .contact__email_item span {
+        padding: 0;
+        padding-right: 8px;
+    }
+}

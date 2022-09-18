@@ -35,3 +35,9 @@
     transform: translateY(-5px);
     cursor: pointer;
 }
+
+@media only screen and (max-width: 750px) {
+    .no_found {
+        height: calc(100vh - 82px);   
+    }
+}

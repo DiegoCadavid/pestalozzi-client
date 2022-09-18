@@ -22,7 +22,7 @@
 
 .contact_home__info_item {
     padding: 15px;
-    color: var(--light);
+    color: var(--light-muted);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,13 +39,13 @@
     border-radius: 50%;
 }
 
-.contact__map {
+.contact_home__map {
     margin-top: 60px;
     
     color: whitesmoke;
 }
 
-.contact__map iframe{
+.contact_home__map iframe{
     border-radius: 12px;
     border: 0;
     width: 80vw;
@@ -75,12 +75,12 @@
         font-size: 14px;
     }
 
-    .contact__map {
+    .contact_home__map {
         margin-top: 10px;
     }
 
 
-    .contact__map iframe {
+    .contact_home__map iframe {
         height: 200px;
     }
 

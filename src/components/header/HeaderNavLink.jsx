@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const HeaderNavLink = ({ to = "", name = "", closedMenu = () => {} }) => {
+const HeaderNavLink = ({ to = "", name = "", admin = 'false', closedMenu = () => {} }) => {
   const location = useLocation();
   const [activeProp, setActiveProp] = useState("false");
 
@@ -29,7 +29,7 @@ const HeaderNavLink = ({ to = "", name = "", closedMenu = () => {} }) => {
   };
 
   return (
-    <li active={activeProp.toString()}>
+    <li active={activeProp.toString()} admin={admin.toString()}>
       <Link to={to} onClick={handleClick}>
         {name}
       </Link>

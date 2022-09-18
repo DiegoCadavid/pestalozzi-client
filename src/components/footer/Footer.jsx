@@ -16,7 +16,7 @@ const Footer = () => {
       {/* Informacion y redes sociales */}
       <div className="footer__row footer__row_border">
         {/* Informacion de contacto */}
-        <div className="footer__column footer__contact ">
+        <div className="footer__column footer__contact " translate="no">
           <h6>Informacion de contacto</h6>
           <ul>
             <li>

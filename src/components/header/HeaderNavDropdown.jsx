@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import AdminNav from "../admin/adminNav/AdminNav";
 import HeaderNavLink from "./HeaderNavLink";
 
-const HeaderNavDropdown = ({ handleClose }) => {
+const HeaderNavDropdown = ({ handleClose, auth}) => {
   const dropdownRef = useRef(null);
 
   const handleLeave = () => {
@@ -20,12 +20,14 @@ const HeaderNavDropdown = ({ handleClose }) => {
     };
   }, []);
 
+
   return (
     <div className="header__nav_dropdown fadeIn" ref={dropdownRef}>
       <ul>
-        <HeaderNavLink to='works' name='Tareas' />
         <HeaderNavLink to='virtual-classroom' name='Aula Virtual' />
-        <HeaderNavLink to='parents-association' name='Asociacion de padres' />
+        <HeaderNavLink to='academic' name='Gestion academica' />
+        {!auth && <HeaderNavLink to='login' name='iniciar sesion' />}
+        {auth && <AdminNav />}
       </ul>
     </div>
   );

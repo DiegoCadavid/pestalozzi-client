@@ -1,0 +1,43 @@
+.admin_home > span {
+    color: var(--primary-muted);
+    font-size: 100px;
+}
+
+.admin_home__info {
+    width: 500px;
+    text-align: center;
+    color: var(--light-muted);
+}
+
+.admin_home__info p b {
+    color: var(--primary-muted);
+}
+
+.admin_home button {
+    margin-top: 24px;
+    padding: 10px;
+
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+
+    transition: all .3s ease;
+}
+
+.admin_home button:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+@media only screen and (max-width: 750px) {
+
+    .admin_home__info {
+        width: 80%;
+    }
+
+    .admin_home {
+        min-height: calc(100vh - 82px);   
+    }
+}

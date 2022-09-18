@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import HeaderNavDropdown from "./HeaderNavDropdown";
 import HeaderNavLink from "./HeaderNavLink";
 
-const HeaderNav = () => {
+const HeaderNav = ({ auth }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleToggle = () => {
@@ -35,7 +35,7 @@ const HeaderNav = () => {
         </ul>
       </div>
 
-      {showDropdown && <HeaderNavDropdown handleClose={handleClose} />}
+      {showDropdown && <HeaderNavDropdown handleClose={handleClose} auth={auth} />}
     </div>
   );
 };

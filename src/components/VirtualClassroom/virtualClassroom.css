@@ -1,0 +1,72 @@
+.virtual__alert {
+    width: 80%;
+    color: var(--light-muted);
+}
+
+.virtual__alert h6 {
+    text-align: center;
+    color: var(--primary-muted);
+    font-size: 18px;
+}
+
+.virtual__container {
+    margin-top: 24px;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.virtual__item {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background-color: var(--bg-light);
+
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+}
+
+.virtual__item_info, .virtual__item > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.virtual__item_info {
+    color: var(--light-muted);
+    text-transform: capitalize;
+    color: var(--primary-muted);
+    font-weight: 600;
+}
+
+.virtual__item_info > span {
+    margin-right: 12px;
+}
+
+
+.virtual__item a {
+    text-decoration: none;
+    color: var(--light-muted);
+
+    transition: all .3 ease;
+}
+
+.virtual__item a span {
+    margin-left: 4px;
+}
+
+.virtual__item a:hover {
+    color: var(--light);
+}
+
+/* Si esta fijado el grado */
+
+.vitual__item_pin {
+    border-left: 8px solid var(--primary-muted);
+}
+

@@ -44,11 +44,7 @@ const Carousel = () => {
         index: imagesCarouselSelect.index + 1,
         data: imagesCarousel[imagesCarouselSelect.index + 1],
       });
-
-      console.log("se ejecutoooo");
     } else {
-      console.log("se ejecuto");
-
       setImagesCarouselSelect({
         index: 0,
         data: imagesCarousel[0],

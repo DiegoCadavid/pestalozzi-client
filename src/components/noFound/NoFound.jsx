@@ -13,7 +13,7 @@ const NoFound = () => {
     <div className="no_found">
       <h3>404</h3>
       <h5>Pagina no encontrada</h5>
-      <h5> "{location.pathname}" </h5>
+      <h5 translate="no"> "{location.pathname}" </h5>
       <button onClick={handleClick}> Inicio </button>
     </div>
   );

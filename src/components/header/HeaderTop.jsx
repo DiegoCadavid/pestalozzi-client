@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 import logo from "../../assets/Logo.png";
 
 const HeaderTop = ({ showMobileMenu }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('contact');
+  }
+
   return (
     <div className="header__top">
       <img src={logo} alt="pestalozzi logo" />
@@ -11,9 +20,9 @@ const HeaderTop = ({ showMobileMenu }) => {
       </div>
 
       <div className="header__top_icons">
-        <span className="material-symbols-outlined">mail</span>
-        <span className="material-symbols-outlined">location_on</span>
-        <span className="material-symbols-outlined">call</span>
+        <span onClick={handleClick} className="material-symbols-outlined">mail</span>
+        <span onClick={handleClick} className="material-symbols-outlined">location_on</span>
+        <span onClick={handleClick} className="material-symbols-outlined">call</span>
       </div>
 
       <button className="header__nav_button" onClick={showMobileMenu}>

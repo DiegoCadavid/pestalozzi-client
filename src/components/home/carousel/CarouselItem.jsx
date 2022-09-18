@@ -5,7 +5,7 @@ import imgtest from "../../../assets/colegio-pestalozzi-1.jpg";
 const CarouselItem = ({ label, url }) => {
   return (
     <div className="carousel__item fadeIn">
-      <img src={url} alt="carousel item test" />
+      <img src={url} alt={label} />
       <div className="carousel__item_info">
         <h4> "El problema no es la diferencia <br />
           sino la <b> indiferencia</b>" </h4>
