@@ -62,6 +62,7 @@ const Carousel = () => {
       setImagesCarouselSelect({
         index: 0,
         data: imagesCarousel[0],
+        
       });
     }
   }, [noImages]);
