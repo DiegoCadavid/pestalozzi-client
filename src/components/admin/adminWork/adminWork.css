@@ -1,0 +1,28 @@
+.admin_work__info {
+    
+
+    display: flex;
+    align-items: center;
+}
+
+.admin_work__info p {
+    font-size: 24px;
+    color: var(--light-muted);
+}
+
+.admin_work__info span {
+    color: var(--primary);
+    margin-right: 12px;
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 750px) {
+    .admin_work__info {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .admin_work__info p {
+        font-size: 18px;
+    }
+}

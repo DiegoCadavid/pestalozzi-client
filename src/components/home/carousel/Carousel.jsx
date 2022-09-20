@@ -24,48 +24,59 @@ const Carousel = () => {
   const [noImages, setNoImages] = useState(true);
 
   useEffect(() => {
+    // Verificamos si el carousel tiene imagenes
     setNoImages(imagesCarousel.length <= 0 ? true : false);
   }, [imagesCarousel]);
 
-  useEffect(() => {
-    if (!noImages) {
-      setImagesCarouselSelect((e) => {
-        return {
-          index: 0,
-          data: imagesCarousel[0],
-        };
-      });
-    }
-  }, [noImages]);
-
   const handleNext = () => {
-    if (imagesCarousel[imagesCarouselSelect.index + 1]) {
-      setImagesCarouselSelect({
-        index: imagesCarouselSelect.index + 1,
-        data: imagesCarousel[imagesCarouselSelect.index + 1],
-      });
-    } else {
+    if (imagesCarouselSelect.index >= imagesCarousel.length - 1) {
       setImagesCarouselSelect({
         index: 0,
         data: imagesCarousel[0],
+      });
+    } else {
+      setImagesCarouselSelect({
+        index: imagesCarouselSelect.index + 1,
+        data: imagesCarousel[imagesCarouselSelect.index + 1],
       });
     }
   };
 
   const handlePrevious = () => {
-    if (imagesCarousel[imagesCarouselSelect.index - 1]) {
-      setImagesCarouselSelect({
-        index: imagesCarouselSelect.index - 1,
-        data: imagesCarousel[imagesCarouselSelect.index - 1],
-      });
-    } else {
+    if (imagesCarouselSelect.index <= 0) {
       setImagesCarouselSelect({
         index: imagesCarousel.length - 1,
         data: imagesCarousel[imagesCarousel.length - 1],
       });
+    } else {
+      setImagesCarouselSelect({
+        index: imagesCarouselSelect.index - 1,
+        data: imagesCarousel[imagesCarouselSelect.index - 1],
+      });
     }
   };
 
+  useEffect(() => {
+    // Si el carousel tiene images selecionar la primera al incio
+    if (!noImages) {
+      setImagesCarouselSelect({
+        index: 0,
+        data: imagesCarousel[0],
+      });
+
+      // El codigo dentro de setInterval se ejecuta por lo cual siempre mostrara el mismo resultado
+      // const intervalCarousel = setInterval(( a ) => {
+      //   const btnNext = document.querySelector('#carousel_btn_foward');
+      //   btnNext.click();
+      // }, 3000, imagesCarouselSelect.index);
+
+      // return () => {
+      //   if (!noImages) {
+      //     clearInterval(intervalCarousel);
+      //   }
+      // };
+    }
+  }, [noImages]);
 
   return (
     <div className="carousel">

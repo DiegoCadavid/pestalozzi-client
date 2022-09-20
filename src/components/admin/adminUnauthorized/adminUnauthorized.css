@@ -1,0 +1,18 @@
+.unauthorized__info {
+    color: var(--light);
+    text-align: center;
+}
+
+
+.unauthorized__info span {
+    font-size: 130px;
+    color: var(--primary);
+}
+
+.unauthorized__info p {
+    color: var(--light-muted);
+}
+
+.unauthorized__info p b {
+    color:var(--primary-muted);
+}

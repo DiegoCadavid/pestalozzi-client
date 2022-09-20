@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import "./app.css";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -18,17 +21,25 @@ import Academic from "./components/Academic/Academic";
 import Private from "./components/admin/Private";
 
 // Administrador
+import isAuth from "./components/admin/helpers/isAuth";
+
 import AdminHome from "./components/admin/adminHome/AdminHome";
 import Login from "./components/admin/login/Login";
-import isAuth from "./components/admin/helpers/isAuth";
 import AdminUsers from "./components/admin/adminUsers/AdminUsers";
+import AdminGalery from "./components/admin/adminGalery/AdminGalery";
+import AdminWork from "./components/admin/adminWork/AdminWork";
+
+
 
 function App() {
-  // Verificamos si estamos en celular
+  // Mobile 
   const [mobileDevice, setMobileDevice] = useState(false);
 
-  // Verificamos si estamos autorizados
-  const [auth, setAuth] = useState(isAuth());
+  // Autenticacion
+  const [auth, setAuth] = useState({
+    status: false,
+    user: {},
+  });
 
   useEffect(() => {
     if (window.innerWidth <= 750) {
@@ -39,7 +50,38 @@ function App() {
       setMobileDevice(false);
     }
 
-    setAuth(isAuth());
+    // Ejecutamos la funcion donde veremos si el usuario esta autenticado
+    isAuth()
+      .then((ok) => {
+        setAuth({
+          status: true,
+          user: ok,
+        });
+      })
+      .catch((err) => {
+        setAuth({
+          status: false,
+          user: {},
+        });
+      });
+
+    // Verficaremos si esta autenticado cada que sucede un cambio en el Storage
+    window.addEventListener("storage", () => {
+      console.log("Se logueo");
+      isAuth()
+        .then((ok) => {
+          setAuth({
+            status: true,
+            user: ok,
+          });
+        })
+        .catch((err) => {
+          setAuth({
+            status: false,
+            user: {},
+          });
+        });
+    });
 
     // Cada que se cambia el tamaño de la pagina se verifica el dispositvo
     window.addEventListener("resize", () => {
@@ -48,31 +90,59 @@ function App() {
       } else {
         setMobileDevice(false);
       }
-    });
-
-    // Cada que sucede un cambio en el sessionStorage por un documento externo
-    window.addEventListener("storage", () => {
-      console.log("Se logueo");
-      setAuth(isAuth());
-    });
+    }); 
   }, []);
 
+  // Funcion para loguearnos
   const handleLogin = () => {
-    setAuth(isAuth());
+    // Cada que nos loguemos lo autenticamos
+    isAuth()
+      .then((ok) => {
+        toast.success("Iniciaste sesion");
+        setAuth({
+          status: true,
+          user: ok,
+        });
+      })
+      .catch((err) => {
+        setAuth({
+          status: false,
+          user: {},
+        });
+      });
   };
 
+  // Si cerramos sesion
   const handleLogout = () => {
+    toast.warning("Cerraste sesion!");
     if (sessionStorage.getItem("auth")) {
       sessionStorage.removeItem("auth");
     }
 
-    setAuth(false);
+    setAuth({
+      status: false,
+      user: {},
+    });
   };
 
   return (
     <div className="app" translate="no">
       <ScrollToTop />
-      <Header mobileDevice={mobileDevice} auth={auth} />
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
+
+      <Header mobileDevice={mobileDevice} auth={auth.status} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -85,9 +155,67 @@ function App() {
         <Route path="*" element={<NoFound />} />
 
         {/* Rutas privadas */}
-        <Route path="login" element={<Login handleLogin={handleLogin} />} />
-        <Route path="admin" element={<Private component={ <AdminHome handleLogout={handleLogout}/> } />} />
-        <Route path="admin/users" element={ <Private component={ <AdminUsers /> } /> } />
+        <Route
+          path="login"
+          element={<Login handleLogin={handleLogin} auth={auth.status} />}
+        />
+        <Route
+          path="admin"
+          element={
+            <Private
+              authUser={auth.user}
+              auth={auth.status}
+              roles={["admin", "student", "teacher"]}
+              component={
+                <AdminHome handleLogout={handleLogout} authUser={auth.user} />
+              }
+            />
+          }
+        />
+        <Route
+          path="admin/users"
+          element={
+            <Private
+              roles={["admin"]}
+              authUser={auth.user}
+              auth={auth.status}
+              component={<AdminUsers />}
+            />
+          }
+        />
+        <Route
+          path="admin/galery"
+          element={
+            <Private
+              authUser={auth.user}
+              auth={auth.status}
+              roles={["admin", "teacher"]}
+              component={<AdminGalery />}
+            />
+          }
+        />
+        <Route
+          path="admin/carousel"
+          element={
+            <Private
+              authUser={auth.user}
+              auth={auth.status}
+              roles={["admin", "student", "teacher"]}
+              component={<AdminWork />}
+            />
+          }
+        />
+        <Route
+          path="admin/news"
+          element={
+            <Private
+              authUser={auth.user}
+              auth={auth.status}
+              roles={["admin", "student", "teacher"]}
+              component={<AdminWork />}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import CarouselItem from "./CarouselItem";
 const CarouselContainer = ({ imagesCarousel, noImages }) => {
   return (
     <div className="carousel__container">
+      {/* Si el carousel no contiene niguna imagen */}
       {noImages && (
         <div className="carousel__item_bad" translate="no">
           <p> No images </p>
@@ -13,8 +14,13 @@ const CarouselContainer = ({ imagesCarousel, noImages }) => {
         </div>
       )}
 
+      {/*   Si el carousel tiene imagenes */}
       {!noImages && (
-        <CarouselItem label={imagesCarousel.label} url={imagesCarousel.url} />
+        <>
+          <CarouselItem label={imagesCarousel.label} url={imagesCarousel.url} />
+          <CarouselItem label={imagesCarousel.label} url={imagesCarousel.url} />
+          <CarouselItem label={imagesCarousel.label} url={imagesCarousel.url} />
+        </>
       )}
     </div>
   );

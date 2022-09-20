@@ -1,17 +1,23 @@
 .virtual__alert {
-    width: 80%;
     color: var(--light-muted);
 }
 
 .virtual__alert h6 {
     text-align: center;
     color: var(--primary-muted);
+    margin-bottom: 8px;
     font-size: 18px;
 }
 
+.virtual__alert p {
+    max-width: 900px;
+    text-align: center;
+}
+
 .virtual__container {
+    width: 100%;
+    max-width: 80%;
     margin-top: 24px;
-    width: 80%;
 
     display: flex;
     flex-direction: column;
@@ -70,3 +76,9 @@
     border-left: 8px solid var(--primary-muted);
 }
 
+
+@media only screen and (max-width: 750px) {
+    .virtual__container {
+        max-width: 100%;
+    }
+}

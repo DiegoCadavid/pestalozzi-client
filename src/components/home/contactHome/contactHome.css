@@ -11,6 +11,13 @@
     font-size: var(--home-title-xl );
     font-weight: 600;
     color: var(--primary);
+
+    transition: all .3 ease;
+}
+
+.contact_home > h3:hover {
+    cursor: pointer;
+    color: var(--primary-muted);
 }
 
 .contact_home__info {

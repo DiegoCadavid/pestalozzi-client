@@ -1,11 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./contactHome.css";
 
 const ContactHome = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/contact');
+  }
+
   return (
     <div className="contact_home">
-      <h3>Contacto</h3>
+      <h3 onClick={handleClick}>Contacto</h3>
 
       <div className="contact_home__info" translate="no">
         <div className="contact_home__info_item">

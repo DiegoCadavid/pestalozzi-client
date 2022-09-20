@@ -1,20 +1,19 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import imgtest from '../../../assets/Our2.jpg';
 
-const GaleryHomeItem = () => {
+const GaleryHomeItem = ({ url }) => {
 
   const navigate = useNavigate();
 
   const handleClick = () => {
 
     // Fullscreen es la url del modal
-    navigate('galery?fullscreen=url_test');
+    navigate(`galery?fullscreen=${url}`);
   }
 
   return (
-    <div className='galery_home__item' onClick={handleClick}>
-        <img src={imgtest} alt="img galeryitem" />
+    <div className='galery_home__item fadeIn' onClick={handleClick}>
+        <img src={url} alt="img galeryitem" />
     </div>
   )
 }

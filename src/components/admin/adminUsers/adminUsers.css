@@ -7,6 +7,11 @@
     align-items: center;
 }
 
+.admin_users__loading {
+    height: 30px;
+    width: 30px;
+}
+
 .admin_users__item {
     padding: 10px 20px;
     width: 100%;
@@ -30,6 +35,15 @@
     margin-right: 8px;
 }
 
+.admin_users__item_role {
+    color: var(--primary-muted);
+    margin-left: 12px;
+}
+
+.admin_users__item_role::before {
+    content: '| ';
+}
+
 .admin_users__item_btn button {
     border: 0;
     border-radius: 4px;
@@ -41,8 +55,9 @@
 }
 
 .admin_users__item_btn_remove {
-    background-color: var(--primary);
-    color: var(--light);;
+    background-color: red;
+    color: var(--light);
+    ;
 
     transition: all .3s ease;
 }
@@ -50,4 +65,88 @@
 .admin_users__item_btn_remove:hover {
     cursor: pointer;
     background-color: var(--primary-dark);
+}
+
+.admin_users__form {
+    margin: 24px 0px;
+    padding: 20px 20px;
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+    width: 80%;
+}
+
+.admin_users__form_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin_users__form_inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.admin_users__form_inputs input[type='text'],
+.admin_users__form_inputs input[type='password'] {
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+
+}
+
+.admin_users__form_inputs select {
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+}
+
+.admin_users__form_inputs select:hover {
+    cursor: pointer;
+}
+
+.admin_users__form_btn_create {
+
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    background-color: var(--success);
+    color: var(--light);
+
+    transition: all .3s ease;
+}
+
+.admin_users__form_btn_create:hover {
+    cursor: pointer;
+    background-color: var(--success-muted);
+}
+
+@media only screen and (max-width: 750px) {
+    .admin_users__form_inputs {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admin_users__form_inputs select {
+        padding: 7px;
+    }
+
+    .admin_users__form_inputs input {
+        width: 100%;
+    }
+
+    .admin_users__form_container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admin_users__form_btn_create {
+        width: 100%;
+    }
 }

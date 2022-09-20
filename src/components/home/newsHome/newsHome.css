@@ -53,6 +53,13 @@
     color: var(--primary);
     font-weight: 600;
     font-size: var(--home-title-xl);
+    
+    transition: all .3s ease;
+}
+
+.news_home__title > h3:hover {
+    cursor: pointer;
+    color: var(--primary-muted);
 }
 
 

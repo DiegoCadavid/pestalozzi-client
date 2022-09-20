@@ -88,7 +88,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
 .contact__email_item > div {
@@ -96,15 +95,37 @@
     align-items: center;
 }
 
-.contact__email_item > div:first-child {
+.contact__email_item_name {
     color: var(--primary-muted);
     font-weight: 600;
     text-transform: capitalize;
 }
 
-.contact__email_item span {
+.contact__email_item_name > span {
     padding: 8px;
     color: var(--primary-muted);
+}
+
+.contact__email_item_email {
+    gap: 12px;
+}
+
+.contact__email_item_email button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: transparent;
+    border: 0;
+
+    color: var(--primary-muted);
+
+    transition: all .3s ease;
+}
+
+.contact__email_item_email button:hover {
+    cursor: pointer;
+    color: var(--primary-dark);
 }
 
 @media only screen and (max-width: 750px) {

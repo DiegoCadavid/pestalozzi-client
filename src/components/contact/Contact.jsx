@@ -42,8 +42,16 @@ const Contact = () => {
             email="secretaria@pestalozzi.edu.co"
           />
           <ContactEmailItem
+            name="Patricia Rios Correa"
+            email="priosco@hotmail.com"
+          />
+          <ContactEmailItem
+            name="Miguel Angel Salazar"
+            email="miguel.gomez@pestalozzi.edu.co"
+          />
+          <ContactEmailItem
             name="Andres Adarve Rios"
-            email="Indefinido"
+            email="adarve@pestalozzi.edu.co"
           />
           <ContactEmailItem
             name="Dora Ines Arcila V"
@@ -52,10 +60,6 @@ const Contact = () => {
           <ContactEmailItem
             name="Yasmid Lopera C"
             email="yasmid@pestalozzi.edu.co"
-          />
-          <ContactEmailItem
-            name="Patricia Rios Correa"
-            email="Indefinido"
           />
           <ContactEmailItem
             name="Carlos Julio Marquez G"
@@ -68,10 +72,6 @@ const Contact = () => {
           <ContactEmailItem
             name="David Stiven Becerra M"
             email="david@pestalozzi.edu.co"
-          />
-          <ContactEmailItem
-            name="Juan Carlos Rios C"
-            email="ingles@pestalozzi.edu.co"
           />
           <ContactEmailItem
             name="Maria Elena Linares Acosta"

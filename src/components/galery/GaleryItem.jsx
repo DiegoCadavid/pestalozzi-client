@@ -13,7 +13,7 @@ const GaleryItem = ({ url = "https://www.pestalozzi.edu.co/images/slide/colegio-
 
   return (
     <div>
-      <div className="galery__item">
+      <div className="galery__item fadeIn">
         <img src={url} alt='imagen galeria' />
         <div className="galery__item_info">
           <button onClick={handleFull}>

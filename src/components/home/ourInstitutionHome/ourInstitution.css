@@ -114,9 +114,11 @@
 
     .our__info_item {
         height: 120px;
-        flex-direction: row;
         padding: 0;
         margin-bottom: 10px;
+
+
+        flex-direction: row;
     }
 
     .our__info_item p {
