@@ -63,18 +63,6 @@ const Carousel = () => {
         index: 0,
         data: imagesCarousel[0],
       });
-
-      // El codigo dentro de setInterval se ejecuta por lo cual siempre mostrara el mismo resultado
-      const intervalCarousel = setInterval(( a ) => {
-        const btnNext = document.querySelector('#carousel_btn_foward');
-        btnNext.click();
-      }, 2500, imagesCarouselSelect.index);
-
-      return () => {
-        if (!noImages) {
-          clearInterval(intervalCarousel);
-        }
-      };
     }
   }, [noImages]);
 
