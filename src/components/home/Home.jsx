@@ -12,10 +12,10 @@ const Home = () => {
   return (
     <div>
       <Carousel />
-      {/* <OurInstitution />
+      <OurInstitution />
       <NewsHome />
       <GaleryHome />
-      <ContactHome /> */}
+      <ContactHome />
     </div>
   );
 };

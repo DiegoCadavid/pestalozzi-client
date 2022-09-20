@@ -65,16 +65,16 @@ const Carousel = () => {
       });
 
       // El codigo dentro de setInterval se ejecuta por lo cual siempre mostrara el mismo resultado
-      // const intervalCarousel = setInterval(( a ) => {
-      //   const btnNext = document.querySelector('#carousel_btn_foward');
-      //   btnNext.click();
-      // }, 3000, imagesCarouselSelect.index);
+      const intervalCarousel = setInterval(( a ) => {
+        const btnNext = document.querySelector('#carousel_btn_foward');
+        btnNext.click();
+      }, 2500, imagesCarouselSelect.index);
 
-      // return () => {
-      //   if (!noImages) {
-      //     clearInterval(intervalCarousel);
-      //   }
-      // };
+      return () => {
+        if (!noImages) {
+          clearInterval(intervalCarousel);
+        }
+      };
     }
   }, [noImages]);
 

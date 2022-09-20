@@ -4,13 +4,8 @@
 }
 
 .carousel__container {
-    height: 100%;
     overflow: hidden;
-    background-color: var(--bg-secondary);
-
-    display: flex;
-    align-items: center;
-    justify-content: center
+    height: 100%;
 }
 
 /* Carousel control */
