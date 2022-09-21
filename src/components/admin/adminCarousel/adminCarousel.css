@@ -1,0 +1,328 @@
+.admin_carousel__container {
+
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.admin_carousel__item_loading {
+    width: 400px;
+    height: 300px;
+    padding: 130px calc(130px + 50px);
+
+    border-radius: 12px;
+    background-color: var(--bg-light);
+}
+
+.admin_carousel__item {
+    position: relative;
+    width: 400px;
+    height: 300px;
+
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin_carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.admin_carousel__item_bad {
+    width: 100%;
+    height: 100%;
+
+    padding: 40px;
+
+    color: var(--light-muted);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin_carousel__item_bad span {
+    font-size: 60px;
+}
+
+.admin_carousel__item_bad p {
+    margin-top: 4px;
+}
+
+.admin_carousel__item_bad_btn {
+    margin-top: 20px;
+
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.admin_carousel__item_bad button {
+    padding: 10px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+
+    background-color: transparent;
+    border-radius: 5px;
+
+    transition: all .3s ease;
+}
+
+.admin_carousel__item_bad button:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.admin_carousel__item_info button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+
+    background-color: var(--primary);
+    color: var(--light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .3s ease;
+}
+
+.admin_carousel__item_info button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: var(--primary-dark);
+}
+
+.admin_carousel__item_info {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    color: var(--light);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7847514005602241) 5%, rgba(255, 255, 255, 0) 35%);
+    padding-bottom: 25px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.admin_carousel__form {
+    border-radius: 8px;
+
+    width: 80%;
+    background-color: var(--bg-secondary);
+    margin-bottom: 24px;
+
+}
+
+.admin_carousel__form form {
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin_carousel__form form>div {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.admin_carousel__form input[type='text'] {
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+}
+
+.admin_carousel__form input[type='submit'] {
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+
+    background-color: var(--success);
+    color: var(--light);
+
+    transition: all .3s ease;
+}
+
+.admin_carousel__form input[type='submit']:hover {
+    cursor: pointer;
+    background-color: var(--success-muted);
+}
+
+.admin_carousel__form form>div>button {
+    width: 36px;
+    height: 36px;
+
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+
+    background-color: var(--light);
+
+    transition: all .3s ease;
+}
+
+.admin_carousel__form form>div>button:hover {
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+}
+
+.admin_carousel__form_loading {
+    width: 36px;
+    height: 36px;
+
+    padding: 6px;
+    background-color: var(--light);
+    border-radius: 8px;
+
+}
+
+.admin_carousel__form_dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 500;
+
+    padding: 15px;
+
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin_carousel__form_dropdown button {
+    width: 50px;
+    height: 50px;
+
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .3s ease;
+}
+
+.admin_carousel__form_dropdown button span {
+    color: var(--primary);
+}
+
+
+.admin_carousel__form_dropdown_active {
+    opacity: 1;
+}
+
+.admin_carousel__form_dropdown_inactive {
+    opacity: .4;
+}
+
+.admin_carousel__form_dropdown button:hover {
+    cursor: pointer;
+    transform: scale(2);
+    opacity: .9;
+}
+
+.admin_carousel__form_dropdown button img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .admin_carousel__form form{
+        width: 100%;
+        padding: 10px;
+
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .admin_carousel__item_loading {
+        width: 400px;
+        height: 300px;
+        
+        border-radius: 12px;
+        background-color: var(--bg-light);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .admin_carousel__item_loading > div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .admin_carousel__form form > div {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .admin_carousel__form input[type='text'] {
+        flex-grow: 2;
+    }
+
+    .admin_carousel__form input[type='submit'] {
+        width: 100%;
+    }
+
+    .admin_carousel__form_dropdown {
+        top: 100px;
+    }
+
+    .admin_carousel__form_dropdown button:hover  {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    
+}

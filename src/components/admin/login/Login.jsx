@@ -37,7 +37,7 @@ const Login = ({ handleLogin, auth }) => {
 
     // En caso de error lo notificamos
     if (error != "") {
-      toast.error(error);
+      toast.error(`${error} 😿`);
     }
 
     if (!loading && error == "") {
@@ -69,7 +69,7 @@ const Login = ({ handleLogin, auth }) => {
         />
         {errors.password && <p>Contraseña requerida.</p>}
 
-        <input type="submit" value="Iniciar sesion" />
+        <input type="submit" value="Iniciar sesion"/>
       </form>
     </div>
   );

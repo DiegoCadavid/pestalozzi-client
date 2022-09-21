@@ -106,21 +106,42 @@
     color: var(--primary-muted);
 }
 
-.contact__email_item_email {
-    gap: 12px;
-}
 
-.contact__email_item_email button {
+.contact__email_item_email a {
+    text-decoration: none;
+    color: var(--primary-muted);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
+    transition: all .3s ease;
+}
+
+.contact__email_item_email a span {
+    margin-left: 4px;
+}
+
+.contact__email_item_email a:hover {
+    color: var(--primary-dark);
+}
+
+.contact__email_item_email a::after {
+    content: '\00a0|\00a0';
+}
+
+.contact__email_item_email button {
+    margin-left: 8px;
     background-color: transparent;
     border: 0;
 
     color: var(--primary-muted);
 
     transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .contact__email_item_email button:hover {

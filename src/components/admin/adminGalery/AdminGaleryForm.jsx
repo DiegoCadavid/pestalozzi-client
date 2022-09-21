@@ -13,22 +13,22 @@ const AdminGaleryForm = ({ handleAdd }) => {
   } = useForm();
 
   const { setFetch, response, loading, error } = useAxios({
-    pending: "Subiendo imagen!",
-    success: "Imagen subida",
-    error: "Error al subir imagen",
+    pending: "Subiendo imagen! 😺",
+    success: "Imagen subida 😸✨",
+    error: "Error al subir imagen 😿",
   });
 
   const submit = (data) => {
     // Validamos si el usuario subio una imagen
     if (data.fileImage.length <= 0) {
-      return toast.error("Debe de subir una imagen");
+      return toast.error("Debe de subir una imagen 😾");
     }
 
     const imageFile = data.fileImage[0];
 
     // Validamos si es una imagen
     if (imageFile.type.split("/")[0] != "image") {
-      return toast.error("El archivo debe ser una imagen");
+      return toast.error("El archivo debe ser una imagen 😾");
     }
 
     // Creamos el form data

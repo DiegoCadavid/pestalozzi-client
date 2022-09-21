@@ -28,6 +28,7 @@ import Login from "./components/admin/login/Login";
 import AdminUsers from "./components/admin/adminUsers/AdminUsers";
 import AdminGalery from "./components/admin/adminGalery/AdminGalery";
 import AdminWork from "./components/admin/adminWork/AdminWork";
+import AdminCarousel from "./components/admin/adminCarousel/AdminCarousel";
 
 
 
@@ -98,7 +99,7 @@ function App() {
     // Cada que nos loguemos lo autenticamos
     isAuth()
       .then((ok) => {
-        toast.success("Iniciaste sesion");
+        toast.success("Iniciaste sesion 😸");
         setAuth({
           status: true,
           user: ok,
@@ -114,7 +115,7 @@ function App() {
 
   // Si cerramos sesion
   const handleLogout = () => {
-    toast.warning("Cerraste sesion!");
+    toast.warning("Cerraste sesion! 🙀");
     if (sessionStorage.getItem("auth")) {
       sessionStorage.removeItem("auth");
     }
@@ -201,7 +202,7 @@ function App() {
               authUser={auth.user}
               auth={auth.status}
               roles={["admin", "student", "teacher"]}
-              component={<AdminWork />}
+              component={<AdminCarousel />}
             />
           }
         />

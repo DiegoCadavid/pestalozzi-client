@@ -44,6 +44,7 @@ const Contact = () => {
           <ContactEmailItem
             name="Patricia Rios Correa"
             email="priosco@hotmail.com"
+            url="https://meet.google.com/gmt-mtmu-jcu"
           />
           <ContactEmailItem
             name="Miguel Angel Salazar"
@@ -52,18 +53,22 @@ const Contact = () => {
           <ContactEmailItem
             name="Andres Adarve Rios"
             email="adarve@pestalozzi.edu.co"
+            url="https://meet.google.com/jiq-arjf-qrb"
           />
           <ContactEmailItem
             name="Dora Ines Arcila V"
             email="arcila@pestalozzi.edu.co"
+            url="https://meet.google.com/owt-ggbe-hdw"
           />
           <ContactEmailItem
             name="Yasmid Lopera C"
             email="yasmid@pestalozzi.edu.co"
+            url="https://meet.google.com/xsn-eokm-rvh"
           />
           <ContactEmailItem
             name="Carlos Julio Marquez G"
             email="carlos@pestalozzi.edu.co"
+            url="https://meet.google.com/phu-ssyt-whb"
           />
           <ContactEmailItem
             name="Beatriz Elena Achuri Ruiz"
@@ -72,18 +77,22 @@ const Contact = () => {
           <ContactEmailItem
             name="David Stiven Becerra M"
             email="david@pestalozzi.edu.co"
+            url="https://meet.google.com/uwr-feuf-fwo"
           />
           <ContactEmailItem
             name="Maria Elena Linares Acosta"
             email="linares@pestalozzi.edu.co"
+            url="https://meet.google.com/did-ffhk-jxs"
           />
           <ContactEmailItem
             name="Dora Deicy Gomez"
             email="gomez@pestalozzi.edu.co"
+            url="https://meet.google.com/iij-rnkh-xtk"
           />
           <ContactEmailItem
             name="Lesly Vanessa Vergara Villada"
             email="lesly.vergara@pestalozzi.edu.co"
+            url="https://meet.google.com/bkk-wfus-ues"
           />
           
           

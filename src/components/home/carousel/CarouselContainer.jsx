@@ -14,7 +14,7 @@ const CarouselContainer = ({ imagesCarousel, noImages }) => {
       )}
 
       {!noImages && (
-        <CarouselItem label={imagesCarousel.label} url={imagesCarousel.url} />
+          <CarouselItem id={imagesCarousel.data.id} label={imagesCarousel.data.label} url={imagesCarousel.data.url} />
       )}
     </div>
   );

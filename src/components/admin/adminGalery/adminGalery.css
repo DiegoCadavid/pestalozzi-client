@@ -2,13 +2,13 @@
 .admin_galery__form {
     margin: 24px 0px;
     width: 80%;
-    padding: 10px 20px;
     border-radius: 8px;
 
     background-color: var(--bg-secondary);
 }
 
 .admin_galery__form form {
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,6 +113,10 @@
     }
 
     .admin_galery__form form input[type='file'] {
+        width: 100%;
+    }
+
+    .admin_galery__form input[type='submit'] {
         width: 100%;
     }
 

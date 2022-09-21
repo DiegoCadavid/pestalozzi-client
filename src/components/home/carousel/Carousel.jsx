@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from "react";
+import useAxios from "../../../hooks/useAxios";
 
 import "./carousel.css";
 import CarouselContainer from "./CarouselContainer";
 import CarouselControls from "./CarouselControls";
 
 const Carousel = () => {
-  const [imagesCarousel, setImagesCarousel] = useState([
-    {
-      label: "test pestalozzi 2",
-      url: "https://www.pestalozzi.edu.co/images/slide/colegio-pestalozzi-2.jpg",
-    },
-    {
-      label: "test pestalozzi 3",
-      url: "https://www.pestalozzi.edu.co/images/slide/colegio-pestalozzi-3.jpg",
-    },
-  ]);
+  const [imagesCarousel, setImagesCarousel] = useState([]);
 
   const [imagesCarouselSelect, setImagesCarouselSelect] = useState({
     index: 0,
@@ -22,6 +14,26 @@ const Carousel = () => {
   });
 
   const [noImages, setNoImages] = useState(true);
+
+  const { setFetch, response, loading, error } = useAxios();
+
+  useEffect(() => {
+    setFetch("/carousel", "get");
+  }, []);
+
+  useEffect(() => {
+    if (!loading && error == "") {
+      setImagesCarousel(
+        response.filter((i) => {
+          if (!i.url) {
+            return false;
+          }
+
+          return true;
+        })
+      );
+    }
+  }, [response]);
 
   useEffect(() => {
     // Verificamos si el carousel tiene imagenes
@@ -62,7 +74,6 @@ const Carousel = () => {
       setImagesCarouselSelect({
         index: 0,
         data: imagesCarousel[0],
-        
       });
     }
   }, [noImages]);
@@ -70,7 +81,7 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <CarouselContainer
-        imagesCarousel={imagesCarouselSelect.data}
+        imagesCarousel={imagesCarouselSelect}
         noImages={noImages}
       />
       <CarouselControls

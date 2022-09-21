@@ -14,9 +14,9 @@ const AdminUsersForm = ({ userCreate }) => {
   } = useForm();
 
   const { setFetch, response, loading, error } = useAxios({
-    pending: "Creando usuario!",
-    success: "Usuario creado",
-    error: "Error al crear usuario",
+    pending: "Creando usuario! 😺",
+    success: "Usuario creado 😸✨",
+    error: "Error al crear usuario 😿",
   });
 
   const submit = (data) => {
@@ -27,7 +27,7 @@ const AdminUsersForm = ({ userCreate }) => {
         });
       })
       .catch((err) => {
-        toast.error(err);
+        toast.error(`${err} 😿`);
       });
   };
 

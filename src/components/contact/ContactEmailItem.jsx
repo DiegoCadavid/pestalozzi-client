@@ -1,16 +1,20 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const ContactEmailItem = ({ name = "name test", email = "test@email.com" }) => {
+const ContactEmailItem = ({
+  name = "name test",
+  email = "test@email.com",
+  url = "#",
+}) => {
   const handleCopy = () => {
     // console.log(email);
     navigator.clipboard
       .writeText(email)
       .then((res) => {
-        toast.info("Correo copiado en el portapapeles!");
+        toast.info("Correo copiado en el portapapeles! 😺");
       })
       .catch((err) => {
-        toast.error("Error al copiar el correo :c");
+        toast.error("Error al copiar el correo 😿");
       });
   };
 
@@ -21,6 +25,12 @@ const ContactEmailItem = ({ name = "name test", email = "test@email.com" }) => {
         <p> {name} </p>
       </div>
       <div className="contact__email_item_email">
+        {url != "#" && (
+          <a href={url} target="_blank">
+            Reunion virtual
+            <span className="material-symbols-outlined">link</span>
+          </a>
+        )}
         {email}
         <button onClick={handleCopy}>
           <span className="material-symbols-outlined">content_copy</span>
