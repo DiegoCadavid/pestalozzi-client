@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import "./app.css";
 import "react-toastify/dist/ReactToastify.css";
+
 import { toast, ToastContainer } from "react-toastify";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -201,7 +202,7 @@ function App() {
             <Private
               authUser={auth.user}
               auth={auth.status}
-              roles={["admin", "student", "teacher"]}
+              roles={["admin", "teacher"]}
               component={<AdminCarousel />}
             />
           }

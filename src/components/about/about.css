@@ -32,6 +32,7 @@
 
 
 .about p {
+    text-align: justify;
     color: var(--light-muted);
     max-width: 1200px;
     

@@ -7,14 +7,10 @@ import CarouselControls from "./CarouselControls";
 
 const Carousel = () => {
   const [imagesCarousel, setImagesCarousel] = useState([]);
-
   const [imagesCarouselSelect, setImagesCarouselSelect] = useState({
     index: 0,
     data: {},
   });
-
-  const [noImages, setNoImages] = useState(true);
-
   const { setFetch, response, loading, error } = useAxios();
 
   useEffect(() => {
@@ -36,8 +32,14 @@ const Carousel = () => {
   }, [response]);
 
   useEffect(() => {
-    // Verificamos si el carousel tiene imagenes
-    setNoImages(imagesCarousel.length <= 0 ? true : false);
+    if (imagesCarousel.length > 0) {
+      setImagesCarouselSelect({
+        index: 0,
+        data: imagesCarousel[0],
+      });
+    } else {
+      setImagesCarouselSelect(null);
+    }
   }, [imagesCarousel]);
 
   const handleNext = () => {
@@ -68,34 +70,23 @@ const Carousel = () => {
     }
   };
 
-  useEffect(() => {
-    // Si el carousel tiene images selecionar la primera al incio
-    if (!noImages) {
-      setImagesCarouselSelect({
-        index: 0,
-        data: imagesCarousel[0],
-      });
-    }
-  }, [noImages]);
-
   return (
     <div className="carousel">
-      <CarouselContainer
-        imagesCarousel={imagesCarouselSelect}
-        noImages={noImages}
-      />
-      <CarouselControls
-        icon="arrow_back_ios_new"
-        handleAction={handlePrevious}
-        noImages={noImages}
-        direction="back"
-      />
-      <CarouselControls
-        icon="arrow_forward_ios"
-        handleAction={handleNext}
-        noImages={noImages}
-        direction="foward"
-      />
+      <CarouselContainer imagesCarousel={imagesCarouselSelect} loadingImages={loading} />
+      {(imagesCarouselSelect && imagesCarousel.length > 1)    && (
+        <>
+          <CarouselControls
+            icon="arrow_back_ios_new"
+            handleAction={handlePrevious}
+            direction="back"
+          />
+          <CarouselControls
+            icon="arrow_forward_ios"
+            handleAction={handleNext}
+            direction="foward"
+          />
+        </>
+      )}
     </div>
   );
 };

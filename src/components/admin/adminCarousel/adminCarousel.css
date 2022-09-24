@@ -262,7 +262,6 @@
 
 .admin_carousel__form_dropdown button:hover {
     cursor: pointer;
-    transform: scale(2);
     opacity: .9;
 }
 

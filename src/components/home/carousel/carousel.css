@@ -111,7 +111,10 @@
     font-weight: bold;
 }
 
-
+.carousel__item_loading div{
+    width: 30px;
+    height: 30px;
+}
 /* Carousel control */
 .carousel__controls {
     position: absolute;

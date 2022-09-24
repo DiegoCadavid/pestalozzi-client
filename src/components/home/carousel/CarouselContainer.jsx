@@ -1,10 +1,11 @@
 import React from "react";
+import Loading from "../../loading/Loading";
 import CarouselItem from "./CarouselItem";
 
-const CarouselContainer = ({ imagesCarousel, noImages }) => {
+const CarouselContainer = ({ imagesCarousel, loadingImages }) => {
   return (
     <div className="carousel__container">
-      {noImages && (
+      {(!imagesCarousel && !loadingImages) && (
         <div className="carousel__item_bad" translate="no">
           <p> No images </p>
           <p>
@@ -13,8 +14,18 @@ const CarouselContainer = ({ imagesCarousel, noImages }) => {
         </div>
       )}
 
-      {!noImages && (
-          <CarouselItem id={imagesCarousel.data.id} label={imagesCarousel.data.label} url={imagesCarousel.data.url} />
+      {
+        loadingImages && (<div className="carousel__item_loading"> 
+          <Loading weight={5}/>
+        </div>)
+      }
+
+      {imagesCarousel && (
+        <CarouselItem
+          id={imagesCarousel.data.id}
+          label={imagesCarousel.data.label}
+          url={imagesCarousel.data.url}
+        />
       )}
     </div>
   );
